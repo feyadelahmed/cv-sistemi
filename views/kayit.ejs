@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/genel.css">
+    <link rel="stylesheet" href="/static/css/kayit.css">
+    <title>Kayıt</title>
+</head>
+<body>
+    <form id="kayit-form" action="/auth/kayit" method="post">
+        <h1>Kayıt Ol</h1>
+        <p id="msg" class="<%= (msg == '') ? 'hidden' : '' %>"> <%= msg %> </p>
+        <input id="username" type="text" name="username" placeholder="Kullanıcıadı" value="<%= username %>">
+        <input id="password" type="password" name="password" placeholder="Şifre" value="<%= password %>">
+        <input type="submit" value="Kayıt Ol">
+        <a href="/auth/giris">Giriş Yap</a>
+    </form>
+    <script src="/static/js/kayit.js"></script>
+</body>
+</html>

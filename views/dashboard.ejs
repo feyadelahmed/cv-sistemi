@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/genel.css">
+    <link rel="stylesheet" href="/static/css/nav.css">
+    <link rel="stylesheet" href="/static/css/dashboard.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <%- include('nav'); %>
+    <main>
+        <div class="cont">
+            <h1>Dashboard</h1>
+            <a class="newcv" href="/dashboard?yenicv=1"> + Yeni CV Oluştur</a>
+            <div class="cvs">
+                <% cvs.forEach(cv => { %>
+                    <div id="<%= cv.id %>" class="cv">
+                        <img src="<%= cv.img %>">
+                        <div class="text">
+                            <div class="title">
+                                <h2><%= cv.ad %> <%= cv.soyad %></h2>
+                                <p><%= cv.aciklama %></p>
+                            </div>
+                            <div class="cmds">
+                                <a href="/cv/<%= cv.id %>/duzenle">Düzenle</a>
+                                <a href="/cv/<%= cv.id %>/sil">Sil</a>
+                                <a href="/cv/<%= cv.id %>/paylas?paylas=<%= cv.paylasma_param%>"><%= cv.paylasma_komut %></a>
+                                <a href="/cv/<%= cv.id %>/indir">İndir(PDF)</a>
+                            </div>
+                            <% if (cv.paylasma) { %>
+                                <div class="link">
+                                    <p>Paylaşma Linki:</p>
+                                    <a target="_blank" href="/cv/<%= cv.id %>"></a>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                <%  }); %>
+            </div>
+        </div>
+    </main>
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+    <script src="/static/js/dashboard.js"></script>
+</body>
+</html>

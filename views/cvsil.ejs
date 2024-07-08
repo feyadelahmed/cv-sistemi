@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/genel.css">
+    <link rel="stylesheet" href="/static/css/cvsil.css">
+    <title>CV Sil</title>
+</head>
+<body>
+    <main>
+        <div class="cont">
+            <h1>CV Silmek</h1>
+            <p>CV Açıklama: "<%= cv.aciklama %>"</p>
+            <h2>Bu CV'yi silmek istediğinizden emin misiniz?</h2>
+            <div class="btn">
+                <a href="/cv/<%= cv.id %>/sil?onay=1">Evet</a>
+                <a href="/cv/<%= cv.id %>/sil?onay=0">Hayır</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

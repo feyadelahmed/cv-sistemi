@@ -1,0 +1,115 @@
+main h1 {
+    color: white;
+    background-color: #6c5ce7;
+    width: fit-content;
+    padding: 4px 7px;
+    margin: 20px auto;
+}
+
+main form {
+    margin: auto;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 80px;
+}
+
+main form p.username {
+    font-size: 1.5rem;
+    color: #6c5ce7;
+    margin: auto;
+}
+
+main form.password {
+    max-width: 500px;
+}
+
+
+main form .form-input.img {
+    position: relative;
+    justify-content: center;
+}
+
+main form .form-input.img img {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+main form .form-input.img input {
+    display: none;
+}
+
+main form .form-input.img label {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    padding: 0;
+    margin: 0;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    opacity: 0;
+    cursor: pointer;
+}
+
+main form .form-input.img label:hover {
+    background-color: rgba(78, 76, 76, 0.548);
+    opacity: 1;
+}
+
+
+main form .form-input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+main form .form-input label {
+    font-size: 1.5rem;
+}
+
+main form .form-input input {
+    font-size: 1.5rem;
+    padding: 10px;
+    border: 2px solid #6c5ce7;
+    outline: none;
+}
+
+main form .form-input input[type="submit"] {
+    margin: auto;
+}
+
+
+main form p.sifredegistirmsg,
+main form p.hesabsilmsg {
+    color: red;
+    text-align: center;
+    width: 100%;
+}
+
+main form #sil {
+    width: 100%;
+}
+
+@media screen and (max-width: 700px) {
+    main form .form-input {
+        flex-direction: column;
+        align-items: start;
+        gap: 6px;
+    }
+
+    main form #sil {
+        width: max-content;
+    }
+
+    main form .form-input.img {
+        align-items: center;
+    }
+}

@@ -1,0 +1,48 @@
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    width: 100%;
+    max-width: 350px;
+    margin: auto;
+    margin-top: 100px;
+    text-align: center;
+}
+
+form h1 {
+    font-size: 3rem;
+}
+
+form p {
+    color: #d63031;
+    background-color: #fbbcae;
+    padding: 10px;
+    font-size: 1.1rem;
+    border: 2px solid #d63031;
+}
+
+form p.hidden {
+    display: none;
+}
+
+form input {
+    font-size: 1.5rem;
+    padding: 10px;
+    border: 2px solid #6c5ce7;
+    outline: none;
+}
+
+form input[type="submit"] {
+    color: white;
+    background-color: #6c5ce7;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #503bed;
+}
+
+form a {
+    color: #6c5ce7;
+    font-size: 1.1rem;
+}

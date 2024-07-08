@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/genel.css">
+    <link rel="stylesheet" href="/static/css/cvgoster.css">
+    <title>CV - <%= cv.ad %> <%= cv.soyad %></title>
+</head>
+<body>
+    <div class="cont">
+        <section id="profile">
+            <div class="img">
+                <img src="<%= cv.img %>">
+            </div>
+            <div class="info">
+                <p class="ad"><%= cv.ad %> <%= cv.soyad %></p>
+                <p><%= cv.email %></p>
+                <p><%= cv.tel %></p>
+                <p><%= cv.adres %></p>
+                <p><%= cv.ozet %></p>
+            </div>
+        </section>
+
+        <section id="egitim">
+            <h1>Eğitim:</h1>
+            <% cv.egitim.forEach(e => { %>
+                <div class="egitim">
+                    <p><%= e.yilBaslangic %> - <%= e.yilBitis %></p>
+                    <p class="bolum"><%= e.bolum %></p>
+                    <p><%= e.kurum %> - <%= e.il %>, <%= e.ulke %></p>
+                </div>
+            <% }) %>
+        </section>
+
+        <section id="isdeneyimler">
+            <h1>İş Deneyimi:</h1>
+            <% cv.isdeneyimler.forEach(is => { %>
+                <div class="isdeneyimler">
+                    <p><%= is.ayBaslangic %>/<%= is.yilBaslangic %> - <%= is.ayBitis %>/<%= is.yilBitis %></p>
+                    <p class="kurum"><%= is.kurum %></p>
+                    <p class="unvan"><%= is.unvan %></p>
+                    <p><%= is.ozet %></p>
+                </div>
+            <% }) %>
+        </section>
+
+        <section id="araclar">
+            <h1>Araçlar:</h1>
+            <div class="araclar">
+                <% cv.araclar.forEach(a => { %>
+                    <p><%= a.arac %> - <%= a.seviye %></p>
+                <% }) %>
+            </div>
+        </section>
+
+        <section id="diller">
+            <h1>Diller:</h1>
+            <div class="diller">
+                <% cv.diller.forEach(d => { %>
+                    <p><%= d.dil %> - <%= d.seviye %></p>
+                <% }) %>
+            </div>
+        </section>
+
+        <section id="yetenekler">
+            <h1>Yetenekler:</h1>
+            <div class="yetenekler">
+                <% cv.yetenekler.forEach(y => { %>
+                    <p><%= y %></p>
+                <% }) %>
+            </div>
+        </section>
+
+        <section id="linkler">
+            <h1>Linkler:</h1>
+            <div class="linkler">
+                <% cv.linkler.forEach(l => { %>
+                    <p><%= l.ad %>: <a target="_blank" href="<%= l.link %>"><%= l.link %></a></p>
+                <% }) %>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

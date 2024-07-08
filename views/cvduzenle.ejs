@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/genel.css">
+    <link rel="stylesheet" href="/static/css/nav.css">
+    <link rel="stylesheet" href="/static/css/cvduzenle.css">
+    <title>CV Düzenle</title>
+</head>
+<body>
+    <%- include('nav'); %>
+    <main>
+        <div class="cont">
+            <h1>CV Düzenle - <%= cv.aciklama %></h1>
+            
+            <section id="profil" class="">
+                <div class="baslik">
+                    <h2>Profil:</h2>
+                </div>
+                <div class="satirlar">
+                    <div class="satir">
+                        <div class="input-box">
+                            <label>CV Açıklama: </label>
+                            <input type="text" value="<%= cv.aciklama %>">
+                        </div>
+                    </div>
+                    <div class="satir">
+                        <div class="input-box">
+                            <label>Ad: </label>
+                            <input type="text" value="<%= cv.ad %>">
+                        </div>
+                    </div>
+                    <div class="satir">
+                        <div class="input-box">
+                            <label>Soyad: </label>
+                            <input type="text" value="<%= cv.soyad %>">
+                        </div>
+                    </div>
+                    <div class="satir">
+                        <div class="input-box">
+                            <label>Email: </label>
+                            <input type="text" value="<%= cv.email %>">
+                        </div>
+                    </div>
+                    <div class="satir">
+                        <div class="input-box">
+                            <label>Telefon: </label>
+                            <input type="text" value="<%= cv.tel %>">
+                        </div>
+                    </div>
+                    <div class="satir">
+                        <div class="input-box">
+                            <label>Adres: </label>
+                            <input type="text" value="<%= cv.adres %>">
+                        </div>
+                    </div>
+                    <div class="satir">
+                        <div class="input-box">
+                            <label>Özet: </label>
+                            <textarea><%= cv.ozet %></textarea>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="egitim" class="">
+                <div class="baslik">
+                    <h2>Eğitim:</h2>
+                    <button>+ Ekle</button>
+                </div>
+                <div class="satirlar">
+                    <% cv.egitim.forEach(e => { %>
+                        <div class="satir">
+                            <div class="bilgiler">
+                                <div class="ad-bolum">
+                                    <div class="input-box">
+                                        <label>Kurum Adı: </label>
+                                        <input type="text" value="<%= e.kurum %>">
+                                    </div>
+                                    <div class="input-box">
+                                        <label>Bölüm: </label>
+                                        <input type="text" value="<%= e.bolum %>">
+                                    </div>
+                                </div>
+                                <div class="yil-konum">
+                                    <div class="input-box yil">
+                                        <label>Yıl Aralğı: </label>
+                                        <input type="text" value="<%= e.yilBaslangic %>"> -
+                                        <input type="text" value="<%= e.yilBitis %>">
+                                    </div>
+                                    <div class="input-box">
+                                        <label>İl: </label>
+                                        <input type="text" value="<%= e.il %>">
+                                    </div>
+                                    <div class="input-box">
+                                        <label>Ülke: </label>
+                                        <input type="text" value="<%= e.ulke %>">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input-box">
+                                <a href="">sil</a>
+                            </div>
+                        </div>
+                    <% }); %>
+                </div>
+            </section>
+
+            <section id="isdeneyimler" class="">
+                <div class="baslik">
+                    <h2>İş Deneyimi:</h2>
+                    <button>+ Ekle</button>
+                </div>
+                <div class="satirlar">
+                    <% cv.isdeneyimler.forEach(is => { %>
+                        <div class="satir">
+                            <div class="bilgiler">
+                                <div class="ad-unvan">
+                                    <div class="input-box">
+                                        <label>Kurum Adı: </label>
+                                        <input type="text" value="<%= is.kurum %>">
+                                    </div>
+                                    <div class="input-box">
+                                        <label>Unvan: </label>
+                                        <input type="text" value="<%= is.unvan %>">
+                                    </div>
+                                </div>
+                                <div class="ay-yil">
+                                    <div class="input-box yil">
+                                        <label>Tarih Aralğı: </label>
+                                        <input type="text" value="<%= is.ayBaslangic %>" placeholder="ay">
+                                        <input type="text" value="<%= is.yilBaslangic %>" placeholder="yıl"> -
+                                        <input type="text" value="<%= is.ayBitis %>" placeholder="ay">
+                                        <input type="text" value="<%= is.yilBitis %>" placeholder="yıl">
+                                    </div>
+                                </div>
+                                <div class="ozet">
+                                    <div class="input-box">
+                                        <label>Özet: </label>
+                                        <textarea><%= is.ozet %></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input-box">
+                                <a href="">sil</a>
+                            </div>
+                        </div>
+                    <% }) %>
+                </div>
+            </section>
+
+            <section id="diller" class="">
+                <div class="baslik">
+                    <h2>Diller:</h2>
+                    <button>+ Ekle</button>
+                </div>
+                <div class="satirlar">
+                    <% cv.diller.forEach(d => { %>
+                        <div class="satir">
+                            <div class="input-box">
+                                <label>Dil: </label>
+                                <input type="text" value="<%= d.dil %>">
+                            </div>
+                            <div class="input-box">
+                                <label>Seviye: </label>
+                                <input type="text" value="<%= d.seviye %>">
+                            </div>
+                            <div class="input-box">
+                                <a href="">sil</a>
+                            </div>
+                        </div>
+                    <% }); %>
+                </div>
+            </section>
+
+            <section id="araclar" class="">
+                <div class="baslik">
+                    <h2>Araçlar:</h2>
+                    <button>+ Ekle</button>
+                </div>
+                <div class="satirlar">
+                    <% cv.araclar.forEach(a => { %>
+                        <div class="satir">
+                            <div class="input-box">
+                                <label>Araç: </label>
+                                <input type="text" value="<%= a.arac %>">
+                            </div>
+                            <div class="input-box">
+                                <label>Seviye: </label>
+                                <input type="text" value="<%= a.seviye %>">
+                            </div>
+                            <div class="input-box">
+                                <a href="">sil</a>
+                            </div>
+                        </div>
+                    <% }); %>
+                </div>
+            </section>
+
+            <section id="linkler" class="">
+                <div class="baslik">
+                    <h2>Linkler:</h2>
+                    <button>+ Ekle</button>
+                </div>
+                <div class="satirlar">
+                    <% cv.linkler.forEach(l => { %>
+                        <div class="satir">
+                            <div class="input-box">
+                                <label>Ad: </label>
+                                <input type="text" value="<%= l.ad %>">
+                            </div>
+                            <div class="input-box">
+                                <label>Link: </label>
+                                <input type="text" value="<%= l.link %>">
+                            </div>
+                            <div class="input-box">
+                                <a href="">sil</a>
+                            </div>
+                        </div>
+                    <% }); %>
+                </div>
+            </section>
+
+            <section id="yetenekler" class="">
+                <div class="baslik">
+                    <h2>Yetenekler:</h2>
+                    <button>+ Ekle</button>
+                </div>
+                <div class="satirlar">
+                    <% cv.yetenekler.forEach(y => { %>
+                        <div class="satir">
+                            <div class="input-box">
+                                <label>Ad: </label>
+                                <input type="text" value="<%= y %>">
+                            </div>
+                            <div class="input-box">
+                                <a href="">sil</a>
+                            </div>
+                        </div>
+                    <% }); %>
+                </div>
+            </section>
+            <form id="kaydet" action="/cv/<%= cv.id %>/duzenle" method="post">
+                <input type="hidden" name="cvdata">
+                <button id="kaydetBtn">Kaydet</button>
+            </form>
+        </div>
+    </main>
+    <script src="/static/js/cvduzenle.js"></script>
+</body>
+</html>

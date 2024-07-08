@@ -1,0 +1,102 @@
+main h1 {
+    color: white;
+    background-color: #6c5ce7;
+    width: fit-content;
+    padding: 4px 7px;
+    margin: 20px auto;
+}
+
+.newcv {
+    display: block;
+    width: fit-content;
+    font-size: 1.5rem;
+    padding: 10px;
+    border: 2px solid #6c5ce7;
+    outline: none;
+    color: white;
+    background-color: #6c5ce7;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.newcv:hover {
+    background-color: #503bed;
+}
+
+
+.cvs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.cvs .cv {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    max-width: 450px;
+    padding: 20px;
+    border: 2px solid #6c5ce7;
+    gap: 10px;
+}
+
+.cvs .cv img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.cvs .cv .text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+
+.cvs .cv .text .title {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.cvs .cv .text .cmds {
+    display: flex;
+    gap: 12px;
+}
+
+.cvs .cv .text .link {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    flex-wrap: wrap;
+    width: 100% !important;
+}
+
+.cvs .cv .text .link a {
+    padding: 7px 8px;
+    border: 1px solid #6c5ce7;
+    max-width: 100% !important;
+    text-wrap: wrap;
+    overflow: hidden;
+}
+
+
+.cvs .cv .text .cmds a {
+    color: #6c5ce7;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 700px) {
+    .cvs .cv {
+        width: 100%;
+    }
+    
+    .cvs .cv .text .link a {
+        width: 300px !important;
+        overflow: scroll;
+    }
+
+    .cvs {
+        margin-bottom: 20px;
+    }
+    
+}

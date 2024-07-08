@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/genel.css">
+    <link rel="stylesheet" href="/static/css/nav.css">
+    <link rel="stylesheet" href="/static/css/profil.css">
+    <title>Profil</title>
+</head>
+<body>
+    <%- include('nav'); %>
+    <main>
+        <div class="cont">
+            <h1>Profil</h1>
+            <form action="/profil" method="post" enctype="multipart/form-data">
+                <div class="form-input img">
+                    <img id="profil-img" src="<%= user.img %>">
+                    <label for="img">Değiştir</label>
+                    <input type="file" name="img" id="img" accept="image/*">
+                </div>
+                <div class="form-input">
+                    <p class="username"> kullanıcıadı: <%= user.username %></p>
+                </div>
+                <div class="form-input">
+                    <label for="ad">Ad:</label>
+                    <input name="ad" id="ad" type="text" placeholder="Ad" value="<%= user.ad %>">
+                </div>
+                <div class="form-input">
+                    <label for="soyad">Soyad:</label>
+                    <input name="soyad" id="soyad" type="text" placeholder="Soyad" value="<%= user.soyad %>">
+                </div>
+                <div class="form-input">
+                    <label for="email">Email:</label>
+                    <input name="email" id="email" type="email" placeholder="Email" value="<%= user.email %>">
+                </div>
+                <div class="form-input">
+                    <input type="submit" value="Kaydet">
+                </div>
+            </form>
+
+            <h1>Şifre Değiştirme</h1>
+            <form class="password" action="/profil" method="post">
+                <div class="form-input">
+                    <p classs="sifredegistirmsg"><%= sifredegistirmsg%></p>
+                </div>
+                <div class="form-input">
+                    <label for="password">Şifre:</label>
+                    <input name="password" id="password" type="password" placeholder="Yeni Şifre">
+                </div>
+                <div class="form-input">
+                    <label for="password2">Tekrar Şifre:</label>
+                    <input name="password2" id="password2" type="password" placeholder="Yeni Şifreyi Tekrar Giriniz">
+                </div>
+                <div class="form-input">
+                    <input type="submit" value="Şifreyi Değiştir">
+                </div>
+            </form>
+
+            <h1>Hesabını Sil</h1>
+            <form action="/profil" method="post">
+                <div class="form-input">
+                    <p class="hesabsilmsg"><%= hesabsilmsg %></p>
+                </div>
+                <div class="form-input">
+                    <input name="deletepassword" id="sil" type="password" placeholder="Hesabınızı silmek için şifrenizi giriniz">
+                </div>
+                <div class="form-input">
+                    <input type="submit" value="Hesabı Sil">
+                </div>
+            </form>
+        </div>
+    </main>
+    <script src="/static/js/profil.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+.cont {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin: 20px auto;
+    font-size: 1.1rem;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+section h1 {
+    border-bottom: 2px solid;
+    padding-bottom: 5px;
+}
+
+#profile {
+    flex-direction: row;
+}
+
+#profile .img img {
+    width: 200px;
+    height: 200px;
+}
+
+#profile .info {
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+}
+
+#profile .info .ad {
+    font-size: 2rem;
+}
+
+
+#egitim .egitim {
+    display: flex;
+    flex-direction: column;
+}
+
+#egitim .egitim .bolum {
+    font-size: 1.5rem;
+}
+
+#isdeneyimler .isdeneyimler {
+    display: flex;
+    flex-direction: column;
+}
+
+#isdeneyimler .isdeneyimler .kurum,
+#isdeneyimler .isdeneyimler .unvan {
+    font-size: 1.5rem;
+}
+
+@media screen and (max-width: 700px) {
+    .cont {
+        width: 90%;
+    }
+
+    #profile {
+        flex-direction: column;
+    }
+
+    #profile .info {
+        gap: 20px;
+    }
+}

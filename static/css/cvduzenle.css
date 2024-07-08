@@ -1,0 +1,242 @@
+main section .error-highlight {
+    border: 2px solid red !important;
+    box-shadow: 0px 0px 5px 0px red;
+}
+
+main h1 {
+    color: white;
+    background-color: #6c5ce7;
+    width: fit-content;
+    padding: 4px 7px;
+    margin: 20px auto;
+}
+
+main section {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 950px;
+    margin: auto;
+}
+
+main section .baslik {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 2px solid #6c5ce7;
+}
+
+main section .baslik h2 {
+    border: 2px solid #6c5ce7;
+    color: #6c5ce7;
+    padding: 4px 7px;
+}
+
+main section .baslik button {
+    background-color: white;
+    color: #6c5ce7;
+    text-decoration: underline;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+main section .satirlar {
+    display: flex;
+    flex-direction: column;
+}
+
+main section .satirlar .satir {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(226, 226, 226);
+    padding: 7px;
+}
+
+main section .satirlar .satir:not(:last-of-type) {
+    border-bottom: 2px solid rgb(88, 88, 88);
+}
+
+
+main section .satirlar .satir:nth-of-type(2n) {
+    background-color: rgb(202, 198, 198);
+}
+
+
+main section .satirlar .satir .input-box {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+main section .satirlar .satir .input-box label {
+    font-size: 1.1rem;
+}
+
+main section .satirlar .satir .input-box input {
+    font-size: 1.1rem;
+    padding: 3px 5px;
+    border: 2px solid #6c5ce7;
+    outline: none;
+}
+
+main section .satirlar .satir .input-box a {
+    color: #6c5ce7;
+}
+
+main section#profil .input-box:first-child,
+main section#yetenekler .input-box:first-child {
+    width: 70%;
+}
+
+main section#profil input,
+main section#yetenekler input {
+    width: 80%;
+}
+
+main section#profil label{
+    width: 200px;
+}
+
+
+/********************/
+
+main section#egitim .satirlar .satir .bilgiler {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 80%;
+}
+
+main section#egitim .satirlar .satir .bilgiler > div {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+main section#egitim .satirlar .satir .bilgiler .yil-konum .input-box {
+    width: fit-content;
+}
+
+main section#egitim .satirlar .satir .bilgiler .yil-konum .input-box.yil input {
+    width: 60px;
+}
+
+
+main section#egitim .satirlar .satir .bilgiler .yil-konum .input-box input {
+    width: 100px;
+}
+
+/********************/
+
+main section#isdeneyimler .satirlar .satir .bilgiler {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 80%;
+}
+
+main section#isdeneyimler .satirlar .satir .bilgiler > div {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+main section#isdeneyimler .satirlar .satir .bilgiler .ay-yil .input-box {
+    width: fit-content;
+}
+
+main section#isdeneyimler .satirlar .satir .bilgiler .ay-yil .input-box.yil input {
+    width: 60px;
+}
+
+
+main section#isdeneyimler .satirlar .satir .bilgiler .ay-yil .input-box input {
+    width: 100px;
+}
+
+main section#isdeneyimler .satirlar .satir .bilgiler .ozet .input-box {
+    width: 80%;
+}
+
+
+main section#profil .input-box textarea,
+main section#isdeneyimler .satirlar .satir .bilgiler .ozet .input-box textarea {
+    resize: none;
+    font-size: 1.1rem;
+    padding: 3px 5px;
+    border: 2px solid #6c5ce7;
+    outline: none;
+    height: 70px;
+    width: 80%;
+}
+
+main form#kaydet {
+    display: flex;
+    max-width: 950px;
+    margin: auto;
+    padding: 20px;
+}
+
+main form#kaydet button#kaydetBtn {
+    font-size: 1.5rem;
+    padding: 10px;
+    border: 2px solid #6c5ce7;
+    outline: none;
+    color: white;
+    background-color: #6c5ce7;
+    cursor: pointer;
+}
+
+main form#kaydet button#kaydetBtn:hover {
+    background-color: #503bed;
+}
+
+
+@media screen and (max-width: 700px) {
+    main section .satirlar .satir {
+        flex-direction: column;
+        align-items: start;
+        gap: 10px;
+    }
+
+    main section .input-box {
+        justify-content: space-between !important;
+        width: 100% !important;
+    }
+
+    main section#profil .input-box:first-child,
+    main section#yetenekler .input-box:first-child {
+        width: 100%;
+    }
+
+    main section .satir {
+        width: 100%;
+    }
+
+    main section#egitim .satirlar .satir .bilgiler,
+    main section#isdeneyimler .satirlar .satir .bilgiler {
+        width: 100%;
+    }
+
+
+    main section#egitim .satirlar .satir .bilgiler > div,
+    main section#isdeneyimler .satirlar .satir .bilgiler > div {
+        flex-direction: column;
+    }
+
+    main section#egitim .satirlar .satir .yil-konum .input-box:not(:first-of-type) input {
+        width: auto;
+    }
+
+    main section#isdeneyimler .satirlar .satir .input-box.yil input:nth-of-type(2n-1) {
+        width: 30px !important;
+    }
+
+    main section#isdeneyimler .satirlar .satir .input-box.yil input:nth-of-type(2n) {
+        width: 50px !important;
+    }
+}
