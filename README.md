@@ -1,4 +1,4 @@
-# ozgecmis-olusturma-sistemi
+# cv sistemi
 Web Tabanlı Kişisel Özgeçmiş (CV) Oluşturma Sistemi
 
 # Link:
